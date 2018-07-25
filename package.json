@@ -1,0 +1,71 @@
+{
+	"id":"com.moimz.imodule.module.selfdiagnosis",
+	"icon":"mi mi-imodule",
+	"title":{
+		"ko":"자가진단 모듈"
+	},
+	"version":"0.0.1",
+	"description":{
+		"ko":"상담활동 전 본인의 심리상태를 자가진단할 수 있습니다."
+	},
+	"author":{
+		"name":"Eunseop Lim",
+		"email":"dmstjq12@naver.com"
+	},
+	"homepage":"http://www.imodule.kr",
+	"dependencies":{
+		"core":"3.0.0",
+		"member":"3.0.0"
+	},
+	"language":"ko",
+	"admin":true,
+	"context":true,
+	"global":false,
+	"configs":{
+		"templet":{
+			"type":"templet",
+			"default":"default"
+		}
+	},
+	"databases":{
+		"diagnosis_log":{
+			"columns":{
+				"idx":{
+					"type":"int",
+					"length":11,
+					"comment":"자동증가고유값",
+					"is_null":false
+				},
+				"midx":{
+					"type":"int",
+					"length":11,
+					"comment":"멤버 idx"
+				},
+				"name":{
+					"type":"varchar",
+					"length":30,
+					"default":"Anonymous",
+					"comment":"이름"
+				},
+				"subject":{
+					"type":"varchar",
+					"length":30,
+					"comment":"진단과목",
+					"is_null":false
+				},
+				"date":{
+					"type":"int",
+					"length":11,
+					"comment":"진단일"
+				}
+			},
+			"indexes":{
+				"idx":"primary_key",
+				"name":"index",
+				"subject":"index",
+				"date":"index"
+			},
+			"auto_increment":"idx"
+		}
+	}
+}

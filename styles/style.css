@@ -1,0 +1,16 @@
+/**
+ * 이 파일은 iModule selfdiagnosis 모듈의 일부입니다. (https://www.imodule.kr)
+ *
+ * selfdiagnosis 모듈의 컨텍스트에서 사용할 스타일시트
+ * selfdiagnosis 모듈의 모든 템플릿에 사용할 스타일시트를 정의하는데 사용된다.
+ * 이 스타일시트 파일은 ModuleSelfdiagnosis.class.php 의 getContext() 함수내에 호출하도록 정의되어 있다.
+ * @see /modules/selfdiagnosis/ModuleSelfdiagnosis.class.php
+ * 광역으로 적용되는 것을 막기 위해 가급적 모듈 컨테이너안에서만 적용되는 스타일을 지정한다.
+ * 
+ * @file /modules/selfdiagnosis/scripts/script.js
+ * @author Eunseop Lim (dmstjq12@naver.com)
+ * @license MIT License
+ * @version 0.0.1
+ * @modified 2018. 7. 23.
+ */
+/* div[data-module=selfdiagnosis] b {font-size:20px;} */

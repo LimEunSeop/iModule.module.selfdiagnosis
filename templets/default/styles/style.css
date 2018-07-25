@@ -1,0 +1,170 @@
+/**
+ * 이 파일은 iModule selfdiagnosis 모듈의 일부입니다. (https://www.imodule.kr)
+ *
+ * selfdiagnosis 모듈 기본템플릿 - 템플릿에서 사용할 스타일시트
+ * 이 자바스크립트 파일은 템플릿 폴더의 package.json 에 정의된 styles 에 의해 자동으로 호출된다.
+ * 광역으로 적용되는 것을 막기 위해 가급적 모듈 컨테이너와 해당 템플릿에서만 적용되는 스타일을 지정한다.
+ * @see /modules/selfdiagnosis/templets/default/package.json
+ * 
+ * @file /modules/selfdiagnosis/templets/default/styles/style.css
+ * @author Eunseop Lim (dmstjq12@naver.com)
+ * @license MIT License
+ * @version 0.0.1
+ * @modified 2018. 7. 23.
+ */
+
+div[data-module=selfdiagnosis] .container {
+    box-shadow: 0 0 20px 1px rgb(128, 124, 124);
+    width: 800px;
+    margin: 30px 0;
+    padding: 30px 25px;
+    border-radius: 10px;
+}
+
+div[data-module=selfdiagnosis] .degree-4 li {
+    display: inline-block;
+    background-color: #297ed3;
+    color: white;
+    height: 32px;
+    padding: 5px 15px;
+    margin: 0 4px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+div[data-module=selfdiagnosis] .degree-5 li {
+    display: inline-block;
+    background-color: #297ed3;
+    color: white;
+    height: 32px;
+    padding: 5px 13px;
+    margin: 0 0.5px 0 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+div[data-module=selfdiagnosis] .degree-yn li {
+    display: inline-block;
+    background-color: #297ed3;
+    color: white;
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
+    padding: 5px 13px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+div[data-module=selfdiagnosis] .degree-yn li:first-child {
+    margin-left: 57px;
+}
+
+div[data-module=selfdiagnosis] .degree-yn li:nth-child(2) {
+    margin-left: 25px;
+}
+
+div[data-module=selfdiagnosis] .degree-5 li.vertical-center {
+    line-height: 32px;
+}
+
+div[data-module=selfdiagnosis] .list-icon {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius:50%;
+    border: 3px solid #297ed3;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen {
+    text-align: left;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen th:first-child {
+    width: 440px;
+    padding: 10px 0;
+    line-height: 20px;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen th:nth-child(2) {
+    /* width: 321px; */
+    padding-bottom: 20px;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen th .indent-one {
+    display: inline-block;
+    text-indent: 28px;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen th .indent-two {
+    display: inline-block;
+    text-indent: 36px;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen td {
+    border-bottom: 1px dashed #c1c1c1;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen td.selection-4 input[type=radio] {
+    margin: 0 32px;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen td.selection-5 input[type=radio] {
+    margin: 0 26.5px;
+}
+
+div[data-module=selfdiagnosis] table.selection-screen td.selection-yn input[type=radio] {
+    margin: 0 0 0 95px;
+}
+
+div[data-module=selfdiagnosis] .btn-container {
+    position: relative;
+    height: 50px;
+}
+
+div[data-module=selfdiagnosis] .clsShowHide {
+    display: none;
+}
+
+
+/**
+ * 버튼 출처 : https://codepen.io/cheeriottis/pen/inluv
+ */
+ div[data-module=selfdiagnosis] .animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+div[data-module=selfdiagnosis] .action-button
+{
+    position: absolute;
+    right: 0;
+	padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+    font-size: 15px;
+    font-weight: bold;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+div[data-module=selfdiagnosis] .blue
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+div[data-module=selfdiagnosis] .action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}

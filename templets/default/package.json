@@ -1,0 +1,18 @@
+{
+	"title":{
+		"ko":"자가진단 모듈 기본 템플릿"
+	},
+	"version":"0.0.1",
+	"author":{
+		"name":"Eunseop Lim",
+		"email":"dmstjq12@naver.com"
+	},
+	"homepage":"https://www.imodule.kr",
+	"language":"ko",
+	"scripts":[
+		"/scripts/script.js"
+	],
+	"styles":[
+		"/styles/style.css"
+	]
+}
