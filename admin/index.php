@@ -14,7 +14,6 @@ if (defined('__IM__') == false) exit;
 ?>
 <script>
 Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
-    new Ext.util
     new Ext.grid.Panel({
         id: "ModuleSelfdiagnosis",
         title: Selfdiagnosis.getText("admin/logs/title"),
