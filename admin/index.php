@@ -23,6 +23,7 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                 type: "ajax",
                 simpleSortMode: true,
                 url: ENV.getProcessUrl("Selfdiagnosis", "@getLogs"),
+                extraParams:{filterElements:"[]"},
                 reader: {type:"json"}
             },
             remoteSort: true,
@@ -39,14 +40,45 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                             Ext.Msg.show({title:Admin.getText("alert/error"),msg:Admin.getText("error/load"),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR});
                         }
                     }
+                },
+                filterchange: function(store, filters, eOpts) {
+                    var filterElements = [];
+
+                    filters.forEach(function(filter) {
+
+                        /**
+                         * MySQL 에서는 EQ LT GT 쓰면 에러난다... 어쩔수 없이 이렇게 바꿔주기로 한다..
+                         */
+                        var operator = null;
+                        if (filter._operator.toUpperCase() === "EQ") {
+                            operator = "=";
+                        }
+                        if (filter._operator.toUpperCase() === "LT") {
+                            operator = "<";
+                        }
+                        if (filter._operator.toUpperCase() === "GT") {
+                            operator = ">";
+                        }
+
+                        filterElements.push({
+                            whereProp: filter._property,
+                            whereValue: filter._value,
+                            operator: operator
+                        });
+                    });
+                    
+                    store.getProxy().setExtraParam("filterElements", JSON.stringify(filterElements));
+                    store.loadPage(1);
                 }
             }
         }),
+        plugins: "gridfilters",
         columns: [{
             text: Selfdiagnosis.getText("admin/logs/columns/midx"),
             width: 120,
             dataIndex: "midx",
             sortable: true,
+            filter: {type:"number"},
             renderer: function(value, p) {
                 if (value == 0) {
                     p.style = "text-align:center;";
@@ -58,19 +90,22 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
             text: Selfdiagnosis.getText("admin/logs/columns/name"),
             width: 200,
             dataIndex: "name",
-            sortable: true
+            sortable: true,
+            filter: {type:"string"}
         }, {
             text: Selfdiagnosis.getText("admin/logs/columns/subject"),
             width: 200,
             dataIndex: "subject",
             sortable: true,
-            align: "right"
+            align: "right",
+            filter: {type:"string"}
         }, {
             text: Selfdiagnosis.getText("admin/logs/columns/date"),
             width: 130,
             align: "center",
             dataIndex: "date",
             sortable: true,
+            filter: {type:"date"},
             renderer: function(value) {
                 return value > 0 ? moment(value * 1000).format("YYYY-MM-DD HH:mm") : "-";
             }

@@ -16,9 +16,16 @@ $start = Request('start');
 $limit = Request('limit');
 $sort = Request('sort') ? Request('sort') : 'idx';
 $dir = Request('dir') ? Request('dir') : 'asc';
+$filterElements = Request('filterElements') == '[]' ? null : json_decode(Request('filterElements'));
 
 // 할일 할당돼있는 전체 회원 수 구하기
 $lists = $this->db()->select($this->table->log)->orderBy($sort,$dir);
+
+if ($filterElements != null) {
+    foreach ($filterElements as $filterElement) {
+        $lists->where($filterElement->whereProp, $filterElement->whereValue, $filterElement->operator);
+    }
+}
 $total = $lists->copy()->count(); // log 테이블 레코드 갯수
 if ($limit > 0) $lists->limit($start,$limit);
 $lists = $lists->get();
