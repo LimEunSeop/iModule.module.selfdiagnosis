@@ -28,7 +28,7 @@
 		}
 	},
 	"databases":{
-		"diagnosis_log":{
+		"selfdiagnosis_log":{
 			"columns":{
 				"idx":{
 					"type":"int",

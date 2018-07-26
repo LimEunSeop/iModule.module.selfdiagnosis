@@ -55,7 +55,7 @@ class ModuleSelfdiagnosis {
 		 * @see 모듈폴더의 package.json 의 databases 참고
 		 */
 		$this->table = new stdClass();
-		$this->table->log = 'diagnosis_log';
+		$this->table->log = 'selfdiagnosis_log';
 	}
 	
 	/**
