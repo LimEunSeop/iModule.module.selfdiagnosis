@@ -18,7 +18,7 @@ $sort = Request('sort') ? Request('sort') : 'idx';
 $dir = Request('dir') ? Request('dir') : 'asc';
 $filterElements = Request('filterElements') == '[]' ? null : json_decode(Request('filterElements'));
 
-// 할일 할당돼있는 전체 회원 수 구하기
+// 전체 회원의 로그 구하기
 $lists = $this->db()->select($this->table->log)->orderBy($sort,$dir);
 
 if ($filterElements != null) {
@@ -29,6 +29,10 @@ if ($filterElements != null) {
 $total = $lists->copy()->count(); // log 테이블 레코드 갯수
 if ($limit > 0) $lists->limit($start,$limit);
 $lists = $lists->get();
+
+foreach ($lists as $element) { // ext.js의 store 에서 date 타입 필드는 이렇게 date 포메팅하고 넘겨줘야 인식한다.
+    $element->date = date('Y-m-d H:i', $element->date);
+}
 
 $results->success = true;
 $results->lists = $lists;
