@@ -34,7 +34,7 @@ if (defined('__IM__') == false) exit;
         
         <tbody>
         <tr>
-            <th><span class="list-icon"></span> 1. 내 주변의 사람들과 잘 어울리지 못한다.</th>
+            <th><span class="list-icon"></span>  1. 내 주변의 사람들과 잘 어울리지 못한다.</th>
             <td class="selection-4">
                 <input type="radio" name="q1" value="0">
                 <input type="radio" name="q1" value="1">
@@ -43,7 +43,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 2. 나와 함께 해 줄 친구가 없다.</th>
+            <th><span class="list-icon"></span>  2. 나와 함께 해 줄 친구가 없다.</th>
             <td class="selection-4">
                 <input type="radio" name="q2" value="0">
                 <input type="radio" name="q2" value="1">
@@ -52,7 +52,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 3. 친구들 모임에서 소속감을 느낄 수가 없다.</th>
+            <th><span class="list-icon"></span>  3. 친구들 모임에서 소속감을 느낄 수가 없다.</th>
             <td class="selection-4">
                 <input type="radio" name="q3" value="0">
                 <input type="radio" name="q3" value="1">
@@ -61,7 +61,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 4. 나의 관심과 생각은 주위 사람들과 동떨어진 것<br>
+            <th><span class="list-icon"></span>  4. 나의 관심과 생각은 주위 사람들과 동떨어진 것<br>
                 <span class="indent-one">같다.</span></th>
             <td class="selection-4">
                 <input type="radio" name="q4" value="0">
@@ -71,7 +71,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 5. 나와 가깝게 느껴지는 사람들이 내 주위에는 없다.</th>
+            <th><span class="list-icon"></span>  5. 나와 가깝게 느껴지는 사람들이 내 주위에는 없다.</th>
             <td class="selection-4">
                 <input type="radio" name="q5" value="0">
                 <input type="radio" name="q5" value="1">
@@ -80,7 +80,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 6. 어쩐지 버려진 듯한 느낌이다.</th>
+            <th><span class="list-icon"></span>  6. 어쩐지 버려진 듯한 느낌이다.</th>
             <td class="selection-4">
                 <input type="radio" name="q6" value="0">
                 <input type="radio" name="q6" value="1">
@@ -89,7 +89,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 7. 나를 진정으로 아는 사람은 아무도 없다.</th>
+            <th><span class="list-icon"></span>  7. 나를 진정으로 아는 사람은 아무도 없다.</th>
             <td class="selection-4">
                 <input type="radio" name="q7" value="0">
                 <input type="radio" name="q7" value="1">
@@ -98,7 +98,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 8. 내가 믿고 의지할 만한 사람이 없다.</th>
+            <th><span class="list-icon"></span>  8. 내가 믿고 의지할 만한 사람이 없다.</th>
             <td class="selection-4">
                 <input type="radio" name="q8" value="0">
                 <input type="radio" name="q8" value="1">
@@ -107,7 +107,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 9. 혼자 있을 때 고독하게 느낀다.</th>
+            <th><span class="list-icon"></span>  9. 혼자 있을 때 고독하게 느낀다.</th>
             <td class="selection-4">
                 <input type="radio" name="q9" value="0">
                 <input type="radio" name="q9" value="1">
@@ -116,7 +116,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 10. 자주 고독하다고 느낀다.</th>
+            <th><span class="list-icon"></span>  10. 자주 고독하다고 느낀다.</th>
             <td class="selection-4">
                 <input type="radio" name="q10" value="0">
                 <input type="radio" name="q10" value="1">
@@ -125,7 +125,7 @@ if (defined('__IM__') == false) exit;
             </td>
         </tr>
         <tr>
-            <th><span class="list-icon"></span> 11. 고독하다고 느낄 때 그 정도가 심한 편이다.</th>
+            <th><span class="list-icon"></span>  11. 고독하다고 느낄 때 그 정도가 심한 편이다.</th>
             <td class="selection-4">
                 <input type="radio" name="q11" value="0">
                 <input type="radio" name="q11" value="1">
@@ -141,26 +141,28 @@ if (defined('__IM__') == false) exit;
     <a href="#" class="action-button shadow animate blue">고독감 자가진단 결과보기</a>
 </div>
 
-<div class="container clsShowHide" id="diagnosis1">
-    <h2>자가진단 결과보기</h2>
-    <h4>0 ~ 8점</h4>
-    <p>고독하지 않은 상태입니다.</p>
-</div>
+<div class="resultbox">
+    <div class="container clsShowHide" id="diagnosis1">
+        <h2>자가진단 결과보기</h2>
+        <h4><span class="list-icon"></span> 0 ~ 8점</h4>
+        <p>고독하지 않은 상태입니다.</p>
+    </div>
 
-<div class="container clsShowHide" id="diagnosis2">
-    <h2>자가진단 결과보기</h2>
-    <h4>9 ~ 16점</h4>
-    <p>가벼운 고독상태에 있어 보이므로, 새롭게 기분전환 하는 노력이 필요합니다.</p>
-</div>
+    <div class="container clsShowHide" id="diagnosis2">
+        <h2>자가진단 결과보기</h2>
+        <h4><span class="list-icon"></span> 9 ~ 16점</h4>
+        <p>가벼운 고독상태에 있어 보이므로, 새롭게 기분전환 하는 노력이 필요합니다.</p>
+    </div>
 
-<div class="container clsShowHide" id="diagnosis3">
-    <h2>자가진단 결과보기</h2>
-    <h4>17 ~ 25점</h4>
-    <p>상당한 정도의 고독 상태에 있어 보입니다. 고독상태를 극복하기 위한 적극적인 노력이 필요하며, 이러한 고독상태가 두어 달 이상 지속되는 경우에는 전문가의 도움을 받을 필요가 있습니다.</p>
-</div>
+    <div class="container clsShowHide" id="diagnosis3">
+        <h2>자가진단 결과보기</h2>
+        <h4><span class="list-icon"></span> 17 ~ 25점</h4>
+        <p>상당한 정도의 고독 상태에 있어 보입니다. 고독상태를 극복하기 위한 적극적인 노력이 필요하며, 이러한 고독상태가 두어 달 이상 지속되는 경우에는 전문가의 도움을 받을 필요가 있습니다.</p>
+    </div>
 
-<div class="container clsShowHide" id="diagnosis4">
-    <h2>자가진단 결과보기</h2>
-    <h4>26점 이상</h4>
-    <p>심한 고독 상태에 있어 보입니다. 가능한 한 빨리 전문가의 도움을 받을 필요가 있습니다.</p>
+    <div class="container clsShowHide" id="diagnosis4">
+        <h2>자가진단 결과보기</h2>
+        <h4><span class="list-icon"></span> 26점 이상</h4>
+        <p>심한 고독 상태에 있어 보입니다. 가능한 한 빨리 전문가의 도움을 받을 필요가 있습니다.</p>
+    </div>
 </div>
