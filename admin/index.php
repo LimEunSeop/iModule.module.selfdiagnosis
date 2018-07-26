@@ -22,7 +22,7 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
             proxy: {
                 type: "ajax",
                 simpleSortMode: true,
-                url: ENV.getProcessUrl("Selfdiagnosis", "@getLogs"),
+                url: ENV.getProcessUrl("selfdiagnosis", "@getLogs"),
                 extraParams:{filterElements:"[]"},
                 reader: {type:"json"}
             },
