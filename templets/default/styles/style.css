@@ -13,6 +13,10 @@
  * @modified 2018. 7. 23.
  */
 
+div[data-module=selfdiagnosis] .selection-screen label {
+    display: none;
+}
+
 div[data-module=selfdiagnosis] .container {
     border: 1px solid #dbdbdb;
     width: 800px;
@@ -172,4 +176,71 @@ div[data-module=selfdiagnosis] .action-button:active
 	transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
 	border-bottom: 1px solid;
+}
+
+
+/**
+ * 모바일
+ */
+ @media (max-width:767px) {
+
+    div[data-module=selfdiagnosis] .selection-screen label {
+        display: inline;
+    }
+
+    div[data-module=selfdiagnosis] .container {
+        width: auto;
+        padding: 10px;
+    }
+	div[data-module=selfdiagnosis] .selection-screen thead {
+        display: none;
+    }
+
+    div[data-module=selfdiagnosis] .selection-screen tr > th:first-child, div[data-module=selfdiagnosis] .selection-screen tr > td {
+        width: 330px;
+        display: block;
+        border-bottom: 0;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    div[data-module=selfdiagnosis] table.selection-screen td.selection-4 input[type=radio] {
+        margin: 0 5px 10px 11px;
+        vertical-align: top;
+    }
+    
+    div[data-module=selfdiagnosis] table.selection-screen td.selection-5 input[type=radio] {
+        margin: 0 5px 10px 11px;
+        vertical-align: top;
+    }
+    
+    div[data-module=selfdiagnosis] table.selection-screen td.selection-yn input[type=radio] {
+        margin: 0 5px 0 29px;
+    }
+}
+
+/**
+ * 태블릿
+ */
+@media (min-width:768px) and (max-width:991px) {
+    div[data-module=selfdiagnosis] .container {
+        width: 700px;
+    }
+	div[data-module=selfdiagnosis] .selection-screen tr > th:first-child {
+        width: 340px;
+    }
+}
+
+/**
+ * 해상도가 작은 데스크탑
+ */
+@media (min-width:992px) and (max-width:1199px) {
+
+    div[data-module=selfdiagnosis] .container {
+        width: 670px;
+        padding: 30px 10px 30px 25px;
+    }
+    div[data-module=selfdiagnosis] .selection-screen tr > th:first-child {
+        width: 320px;
+    }
 }

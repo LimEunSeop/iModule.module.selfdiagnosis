@@ -33,94 +33,94 @@ if (defined('__IM__') == false) exit;
         <tr>
             <th><span class="list-icon"></span>  1. 나는 성미가 급하다.</th>
             <td class="selection-4">
-                <input type="radio" name="q1" value="1">
-                <input type="radio" name="q1" value="2">
-                <input type="radio" name="q1" value="3">
-                <input type="radio" name="q1" value="4">
+                <input type='radio' name='q1' value='1' id='q10'><label for='q10'>거의 아니다<br></label>
+                <input type='radio' name='q1' value='2' id='q11'><label for='q11'>가끔 그렇다<br></label>
+                <input type='radio' name='q1' value='3' id='q12'><label for='q12'>자주 그렇다<br></label>
+                <input type='radio' name='q1' value='4' id='q13'><label for='q13'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  2. 나는 불같은 성질을 지녔다.</th>
             <td class="selection-4">
-                <input type="radio" name="q2" value="1">
-                <input type="radio" name="q2" value="2">
-                <input type="radio" name="q2" value="3">
-                <input type="radio" name="q2" value="4">
+                <input type='radio' name='q2' value='1' id='q20'><label for='q20'>거의 아니다<br></label>
+                <input type='radio' name='q2' value='2' id='q21'><label for='q21'>가끔 그렇다<br></label>
+                <input type='radio' name='q2' value='3' id='q22'><label for='q22'>자주 그렇다<br></label>
+                <input type='radio' name='q2' value='4' id='q23'><label for='q23'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  3. 나는 격해지기 쉬운 사람이다.</th>
             <td class="selection-4">
-                <input type="radio" name="q3" value="1">
-                <input type="radio" name="q3" value="2">
-                <input type="radio" name="q3" value="3">
-                <input type="radio" name="q3" value="4">
+                <input type='radio' name='q3' value='1' id='q30'><label for='q30'>거의 아니다<br></label>
+                <input type='radio' name='q3' value='2' id='q31'><label for='q31'>가끔 그렇다<br></label>
+                <input type='radio' name='q3' value='3' id='q32'><label for='q32'>자주 그렇다<br></label>
+                <input type='radio' name='q3' value='4' id='q33'><label for='q33'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  4. 나는 다른 사람이 잘못해서 내 일이 늦어지게 되면<br>
                 <span class="indent-one">화가 난다.</span></th>
             <td class="selection-4">
-                <input type="radio" name="q4" value="1">
-                <input type="radio" name="q4" value="2">
-                <input type="radio" name="q4" value="3">
-                <input type="radio" name="q4" value="4">
+                <input type='radio' name='q4' value='1' id='q40'><label for='q40'>거의 아니다<br></label>
+                <input type='radio' name='q4' value='2' id='q41'><label for='q41'>가끔 그렇다<br></label>
+                <input type='radio' name='q4' value='3' id='q42'><label for='q42'>자주 그렇다<br></label>
+                <input type='radio' name='q4' value='4' id='q43'><label for='q43'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  5. 나는 일을 잘하고도 다른 사람으로부터 인정받지<br>
                 <span class="indent-one">못하면 분통이 터진다.</span></th>
             <td class="selection-4">
-                <input type="radio" name="q5" value="1">
-                <input type="radio" name="q5" value="2">
-                <input type="radio" name="q5" value="3">
-                <input type="radio" name="q5" value="4">
+                <input type='radio' name='q5' value='1' id='q50'><label for='q50'>거의 아니다<br></label>
+                <input type='radio' name='q5' value='2' id='q51'><label for='q51'>가끔 그렇다<br></label>
+                <input type='radio' name='q5' value='3' id='q52'><label for='q52'>자주 그렇다<br></label>
+                <input type='radio' name='q5' value='4' id='q53'><label for='q53'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  6. 나는 쉽게 화를 낸다.</th>
             <td class="selection-4">
-                <input type="radio" name="q6" value="1">
-                <input type="radio" name="q6" value="2">
-                <input type="radio" name="q6" value="3">
-                <input type="radio" name="q6" value="4">
+                <input type='radio' name='q6' value='1' id='q60'><label for='q60'>거의 아니다<br></label>
+                <input type='radio' name='q6' value='2' id='q61'><label for='q61'>가끔 그렇다<br></label>
+                <input type='radio' name='q6' value='3' id='q62'><label for='q62'>자주 그렇다<br></label>
+                <input type='radio' name='q6' value='4' id='q63'><label for='q63'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  7. 나는 화가 나면 욕을 한다.</th>
             <td class="selection-4">
-                <input type="radio" name="q7" value="1">
-                <input type="radio" name="q7" value="2">
-                <input type="radio" name="q7" value="3">
-                <input type="radio" name="q7" value="4">
+                <input type='radio' name='q7' value='1' id='q70'><label for='q70'>거의 아니다<br></label>
+                <input type='radio' name='q7' value='2' id='q71'><label for='q71'>가끔 그렇다<br></label>
+                <input type='radio' name='q7' value='3' id='q72'><label for='q72'>자주 그렇다<br></label>
+                <input type='radio' name='q7' value='4' id='q73'><label for='q73'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  8. 나는 다른 사람 앞에서 비판을 받게 되면 격분한다.</th>
             <td class="selection-4">
-                <input type="radio" name="q8" value="1">
-                <input type="radio" name="q8" value="2">
-                <input type="radio" name="q8" value="3">
-                <input type="radio" name="q8" value="4">
+                <input type='radio' name='q8' value='1' id='q80'><label for='q80'>거의 아니다<br></label>
+                <input type='radio' name='q8' value='2' id='q81'><label for='q81'>가끔 그렇다<br></label>
+                <input type='radio' name='q8' value='3' id='q82'><label for='q82'>자주 그렇다<br></label>
+                <input type='radio' name='q8' value='4' id='q83'><label for='q83'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  9. 나는 내 일이 막히면, 누군가를 때려주고 싶다.</th>
             <td class="selection-4">
-                <input type="radio" name="q9" value="1">
-                <input type="radio" name="q9" value="2">
-                <input type="radio" name="q9" value="3">
-                <input type="radio" name="q9" value="4">
+                <input type='radio' name='q9' value='1' id='q90'><label for='q90'>거의 아니다<br></label>
+                <input type='radio' name='q9' value='2' id='q91'><label for='q91'>가끔 그렇다<br></label>
+                <input type='radio' name='q9' value='3' id='q92'><label for='q92'>자주 그렇다<br></label>
+                <input type='radio' name='q9' value='4' id='q93'><label for='q93'>거의 그렇다<br></label>
             </td>
         </tr>
         <tr>
             <th><span class="list-icon"></span>  10. 나는 일을 잘 했는데도 나쁜 평가를 받게 되면<br>
                 <span class="indent-two">격분을 느낀다.</span></th>
             <td class="selection-4">
-                <input type="radio" name="q10" value="1">
-                <input type="radio" name="q10" value="2">
-                <input type="radio" name="q10" value="3">
-                <input type="radio" name="q10" value="4">
+                <input type='radio' name='q10' value='1' id='q100'><label for='q100'>거의 아니다<br></label>
+                <input type='radio' name='q10' value='2' id='q101'><label for='q101'>가끔 그렇다<br></label>
+                <input type='radio' name='q10' value='3' id='q102'><label for='q102'>자주 그렇다<br></label>
+                <input type='radio' name='q10' value='4' id='q103'><label for='q103'>거의 그렇다<br></label>
             </td>
         </tr>
         </tbody>
