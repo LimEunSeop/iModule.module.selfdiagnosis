@@ -197,7 +197,7 @@ div[data-module=selfdiagnosis] .action-button:active
     }
 
     div[data-module=selfdiagnosis] .selection-screen tr > th:first-child, div[data-module=selfdiagnosis] .selection-screen tr > td {
-        width: 330px;
+        width: 306px;
         display: block;
         border-bottom: 0;
         margin: 10px 0;
