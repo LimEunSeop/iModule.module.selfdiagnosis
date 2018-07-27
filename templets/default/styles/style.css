@@ -157,7 +157,6 @@ div[data-module=selfdiagnosis] .action-button
 	padding: 10px 40px;
     margin: 0px 10px 10px 0px;
 	border-radius: 10px;
-	font-family: 'Pacifico', cursive;
     font-size: 15px;
     font-weight: bold;
 	color: #FFF;
@@ -202,6 +201,7 @@ div[data-module=selfdiagnosis] .action-button:active
         border-bottom: 0;
         margin: 10px 0;
         padding: 0;
+        font-size: 13px;
     }
 
     div[data-module=selfdiagnosis] table.selection-screen td.selection-4 input[type=radio] {
