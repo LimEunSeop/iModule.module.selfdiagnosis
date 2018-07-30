@@ -13,6 +13,10 @@
  * @modified 2018. 7. 23.
  */
 
+div[data-module=selfdiagnosis] p {
+    line-height: 20px;
+}
+
 div[data-module=selfdiagnosis] .selection-screen label {
     display: none;
 }
@@ -177,11 +181,77 @@ div[data-module=selfdiagnosis] .action-button:active
 	border-bottom: 1px solid;
 }
 
+/**
+ * 모바일 반응형 드롭다운 탭메뉴 출처 : https://codepen.io/dmstjq12/pen/OwzMWw
+ */
+ div[data-module=selfdiagnosis] select.tab-dropdown {
+  /* styling */
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: none;
+  width: 240px;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+div[data-module=selfdiagnosis] select.tab-dropdown:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+
+
+
 
 /**
  * 모바일
  */
  @media (max-width:767px) {
+
+    div[data-module=tab] div[data-role=tabbar] {
+        display: none;
+        background-color: red;
+    }
+    div[data-module=selfdiagnosis] select.tab-dropdown {
+        display: inline-block;
+    }
 
     div[data-module=selfdiagnosis] .selection-screen label {
         display: inline;
@@ -244,3 +314,5 @@ div[data-module=selfdiagnosis] .action-button:active
         width: 320px;
     }
 }
+
+

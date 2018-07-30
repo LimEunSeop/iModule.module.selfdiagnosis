@@ -402,26 +402,21 @@ class ModuleSelfdiagnosis {
 	 * @return string $html 컨텍스트 HTML
 	 */
 	function getContext($context,$configs=null) {
+
+		if ($this->getView() == null) {
+			$this->setView('sub01'); // 일관성을 부여하기 위해서. 나중에 주소가지고 마지막 바꿔지기 하는 작업 있는데, 그때 Url 형태가 동일해야함
+		}
 		/**
 		 * 모듈 기본 스타일 및 자바스크립트
 		 */
 		$this->IM->addHeadResource('style',$this->getModule()->getDir().'/styles/style.css');
 		$this->IM->addHeadResource('script',$this->getModule()->getDir().'/scripts/script.js');
-
-		$view = $this->getView() == null ? 'diagnose' : $this->getView();
 		
 		$html = PHP_EOL.'<!-- EXAMPLE #1 MODULE -->'.PHP_EOL.'<div data-role="context" data-type="module" data-module="selfdiagnosis" data-context="'.$context.'">'.PHP_EOL;
+
 		$html.= $this->getHeader($configs);
-		
-		switch ($view) {
-			case 'diagnose' :
-				$html.= $this->getDiagnoseContext($context, $configs);
-				break;
-			
-			default:
-				return $this->getError('NOT_FOUND_PAGE');
-		}
-		
+		$html.= $this->getTemplet($configs)->getContext('dropdown'); // 드롭다운 탭메뉴를 가져온다
+		$html.= $this->getDiagnoseContext($context, $configs);
 		$html.= $this->getFooter($configs);
 		
 		/**
