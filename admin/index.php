@@ -14,10 +14,121 @@ if (defined('__IM__') == false) exit;
 ?>
 <script>
 Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
+    
     new Ext.grid.Panel({
         id: "ModuleSelfdiagnosis",
         title: Selfdiagnosis.getText("admin/logs/title"),
         border: false,
+        tbar:[
+            new Ext.form.ComboBox({
+                id: "ModuleSelfdiagnosisSearchComboBox",
+                displayField: "fieldName",
+                valueField: "value",
+                store: {
+                    data: [
+                        {fieldName:Selfdiagnosis.getText("admin/logs/columns/midx"), value:"midx"},
+                        {fieldName:Selfdiagnosis.getText("admin/logs/columns/name"), value:"name"},
+                        {fieldName:Selfdiagnosis.getText("admin/logs/columns/subject"), value:"subject"},
+                        {fieldName:Selfdiagnosis.getText("admin/logs/columns/date"), value:"date"}
+                    ]
+                },
+                listeners: {
+                    added: function(eOpts) {
+                        this.setValue("name");
+                    },
+                    change: function(newValue, oldValue, eOpts) {
+                        if (Ext.getCmp("ModuleSelfdiagnosis") !== undefined) { // undefined : 이미 필터가 없는 경우, 처음 초기화 할때
+                            Ext.getCmp("ModuleSelfdiagnosis").getStore().clearFilter();
+                        }
+                        Ext.getCmp("ModuleSelfdiagnosisSearchTextField").setValue("");
+                        Ext.getCmp("ModuleSelfdiagnosisSearchDateField").setValue("");
+
+                        if (newValue.getValue() == "date") {
+                            Ext.getCmp("ModuleSelfdiagnosisSearchTextField").hide();
+                            Ext.getCmp("ModuleSelfdiagnosisSearchDateField").show();
+                        } else {
+                            Ext.getCmp("ModuleSelfdiagnosisSearchDateField").hide();
+                            Ext.getCmp("ModuleSelfdiagnosisSearchTextField").show();
+                        }
+                    }
+                }
+            }),
+            new Ext.form.TextField({
+                id: "ModuleSelfdiagnosisSearchTextField",
+                name: "searchTextField",
+                enableKeyEvents: true,
+                listeners: {
+                    keydown: function(field, e, eOpts) {
+                        if (e.getCharCode() === e.ENTER) {
+                            Ext.getCmp("ModuleSelfdiagnosisSearchButton").handler();
+                        }
+                    }
+                }
+            }),
+            new Ext.form.DateField({
+                id: "ModuleSelfdiagnosisSearchDateField",
+                name: "searchDateField",
+                enableKeyEvents: true,
+                listeners: {
+                    keydown: function(field, e, eOpts) {
+                        if (e.getCharCode() === e.ENTER) {
+                            Ext.getCmp("ModuleSelfdiagnosisSearchButton").handler();
+                        }
+                    }
+                }
+            }),
+            new Ext.Button({
+                id: "ModuleSelfdiagnosisSearchButton",
+                text:Selfdiagnosis.getText("admin/logs/search"),
+                iconCls:"fa fa-search",
+                handler:function() {
+                    var comboBoxValue = Ext.getCmp("ModuleSelfdiagnosisSearchComboBox").getValue();
+                    var store = Ext.getCmp("ModuleSelfdiagnosis").getStore();
+                    store.clearFilter();
+                    q = Ext.getCmp("asd");
+
+                    if (comboBoxValue == "date") {
+                        var dateValue = Ext.getCmp("ModuleSelfdiagnosisSearchDateField").getValue();
+                        var dateMilSec = null;
+
+                        if (dateValue !== null) {
+                            dateMilSec = dateValue.getTime();
+                            store.filter({
+                                property: comboBoxValue,
+                                value: dateMilSec,
+                                operator: "="
+                            });
+                        }
+                    } else {
+                        var textValue = Ext.getCmp("ModuleSelfdiagnosisSearchTextField").getValue();
+                        
+                        if (textValue !== "") {
+                            if (comboBoxValue === "name" || comboBoxValue === "subject") { // string 타입 필드는 연산자를 "like" 로 해줘야 한다.
+                                store.addfilter({
+                                    property: comboBoxValue,
+                                    value: textValue,
+                                    operator: "like"
+                                })
+                            } else {
+                                store.filter({
+                                    property: comboBoxValue,
+                                    value: textValue,
+                                    operator: "="
+                                });
+                            }
+                        }
+                    }
+                }
+            }),
+            new Ext.Button({
+                text:Selfdiagnosis.getText("admin/logs/filter"),
+                iconCls:"fa fa-filter",
+                handler:function() {
+                    Selfdiagnosis.list.add();
+                }
+            })
+
+        ],
         store: new Ext.data.JsonStore({
             proxy: {
                 type: "ajax",
@@ -38,6 +149,7 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
             ],
             listeners: {
                 load: function(store, records, success, e) {
+                    // console.log(store, records, success, e);
                     if (success == false) {
                         if (e.getError()) {
                             Ext.Msg.show({title:Admin.getText("alert/error"),msg:e.getError(),buttons:Ext.Msg.OK,icon:Ext.Msg.ERROR});
@@ -48,7 +160,7 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                 },
                 filterchange: function(store, filters, eOpts) {
                     var filterElements = [];
-                    
+                    // console.log(filters);
                     filters.forEach(function(filter) {
 
                         /**
@@ -106,9 +218,10 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                             operator: operator
                         });
                     });
-                    
+                    // console.log(filterElements);
                     store.getProxy().setExtraParam("filterElements", JSON.stringify(filterElements));
-                    store.loadPage(1);
+                    store.loadPage(2);
+                    q = store;
                 }
             }
         }),
@@ -140,12 +253,13 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
             align: "right",
             filter: {type:"string"}
         }, {
+            id: "asd",
             text: Selfdiagnosis.getText("admin/logs/columns/date"),
             width: 130,
             align: "center",
             dataIndex: "date",
             xtype: "datecolumn",
-            format: "Y-m-d H:i",
+            // format: "Y-m-d H:i",
             sortable: true,
             filter: {type:"date"},
             renderer: function(value) {
