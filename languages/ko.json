@@ -1,5 +1,8 @@
 {
 	"context":{
+		"selfdiagnosis": "자가진단 컨텍스트"
+	},
+	"view":{
 		"sub01":"우울",
 		"sub02":"불안",
 		"sub03":"사회불안",

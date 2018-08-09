@@ -10,9 +10,8 @@
  * @author Eunseop Lim
  * @license MIT License
  * @version 0.0.1
- * @modified 2018. 7. 23.
+ * @modified 2018. 8. 9.
  */
-var q = null;
 var Selfdiagnosis = {
 	contextText:null,
 	$context:null,
@@ -25,10 +24,10 @@ var Selfdiagnosis = {
 		$(".action-button", Selfdiagnosis.$context).on("click", Selfdiagnosis.buttonClickHandler);
 
 		$("select.tab-dropdown", $("div[data-module=selfdiagnosis]")).on("change", function(e) { // 모르고 컨텍스트에 제대로 못집어넣었네.. 임시방편으로 저렇게라도 감싸주자.
-			var regex = new RegExp("([a-z]{2}/[^/\.]+/[^/\.]+/)[^/\.]+"); // 이거가지고 몇시간 삽질했네.. 앞에를 그룹으로 묶어주면 됐었는데
+			var regex = new RegExp("([a-z]{2}/[^/\.]+/[^/\.]+/[^/\.]+)"); // 이거가지고 몇시간 삽질했네.. 앞에를 그룹으로 묶어주면 됐었는데
 
-			var renewURL = ENV.getUrl();
-			renewURL = renewURL.replace(regex, "$1" + e.target.value); 
+			var renewURL = ENV.getUrl(null,null,null,null);
+			renewURL = renewURL.replace(regex, "$1" + "/" +  e.target.value); 
 
 			location.href = renewURL;
 		});

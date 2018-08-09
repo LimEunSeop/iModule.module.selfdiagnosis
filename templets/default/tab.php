@@ -16,13 +16,23 @@ if (defined('__IM__') == false) exit;
 
 $diagnosis = Array('sub01'=>'우울', 'sub02'=>'불안', 'sub03'=>'사회불안', 'sub04'=>'발표불안', 'sub05'=>'고독감', 'sub06'=>'분노',
                    'sub07'=>'인정욕구', 'sub08'=>'진로정체감', 'sub09'=>'인터넷중독', 'sub10'=>'사랑유형');
-
-$config = $this->IM->getPage(); // 현재 페이지의 설정값
 ?>
 
 <?php 
-if ($config->context->module == 'tab') { // 탭모듈일때만 반응형 드롭다운 탭 보이게 할것임. 
-    $selectedTab = $this->IM->getModule('tab')->getView() == null ? 'sub01' : $this->IM->getModule('tab')->getView(); // 현재위치 가져오기. ?>
+    $selectedTab = $me->getIdx() == null ? 'sub01' : $me->getIdx(); // 현재위치 가져오기. ?>
+
+    <div data-role="tabbar">
+        <div>
+            <ul>
+                <?php
+                foreach($diagnosis as $key=>$value) { ?>
+                <li <?php if ($key == $selectedTab) echo 'class="selected"'; ?>>
+                    <a href="<?php echo $IM->getUrl(null, null, null, $key, false); ?>"><?php echo $value; ?></a>
+                </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
 
     <select class="tab-dropdown">
         <?php
@@ -30,5 +40,4 @@ if ($config->context->module == 'tab') { // 탭모듈일때만 반응형 드롭�
         <option value="<?php echo $key; ?>"<?php echo $key == $selectedTab ? ' selected="selected"' : ''; ?>><?php echo $value; ?></option>
         <?php } ?>
     </select>
-<?php } ?>
 

@@ -8,7 +8,7 @@
  * @author Eunseop Lim (dmstjq12@naver.com)
  * @license MIT License
  * @version 0.0.1
- * @modified 2018. 7. 23.
+ * @modified 2018. 8. 8.
  */
 class ModuleSelfdiagnosis {
 	/**
@@ -140,6 +140,15 @@ class ModuleSelfdiagnosis {
 	 */
 	function getIdx() {
 		return $this->IM->getIdx();
+	}
+
+	/**
+	 * idx 값을 세팅한다.
+	 *
+	 * @return string $idx
+	 */
+	function setIdx($idx) {
+		return $this->IM->setIdx($idx);
 	}
 	
 	/**
@@ -403,8 +412,8 @@ class ModuleSelfdiagnosis {
 	 */
 	function getContext($context,$configs=null) {
 
-		if ($this->getView() == null) {
-			$this->setView('sub01'); // 일관성을 부여하기 위해서. 나중에 주소가지고 마지막 바꿔지기 하는 작업 있는데, 그때 Url 형태가 동일해야함
+		if ($this->getIdx() == null) {
+			$this->setIdx('sub01'); // 일관성을 부여하기 위해서. 나중에 주소가지고 마지막 바꿔지기 하는 작업 있는데, 그때 Url 형태가 동일해야함
 		}
 		/**
 		 * 모듈 기본 스타일 및 자바스크립트
@@ -412,17 +421,23 @@ class ModuleSelfdiagnosis {
 		$this->IM->addHeadResource('style',$this->getModule()->getDir().'/styles/style.css');
 		$this->IM->addHeadResource('script',$this->getModule()->getDir().'/scripts/script.js');
 		
-		$html = PHP_EOL.'<!-- EXAMPLE #1 MODULE -->'.PHP_EOL.'<div data-role="context" data-type="module" data-module="selfdiagnosis" data-context="'.$context.'">'.PHP_EOL;
+		$html = PHP_EOL.'<!-- SELFDIAGNOSIS MODULE -->'.PHP_EOL.'<div data-role="context" data-type="module" data-module="selfdiagnosis" data-context="'.$context.'">'.PHP_EOL;
 
 		$html.= $this->getHeader($configs);
-		$html.= $this->getTemplet($configs)->getContext('dropdown'); // 드롭다운 탭메뉴를 가져온다
-		$html.= $this->getDiagnoseContext($context, $configs);
+		$html.= $this->getTemplet($configs)->getContext('tab'); // 탭메뉴를 가져온다
+
+		switch ($context) {
+			case 'selfdiagnosis':
+				$html.= $this->getDiagnoseContext($this->getIdx(), $configs);
+				break;
+		}
+		
 		$html.= $this->getFooter($configs);
 		
 		/**
 		 * 컨텍스트 컨테이너를 설정한다.
 		 */
-		$html.= PHP_EOL.'</div>'.PHP_EOL.'<!--// EXAMPLE #1 MODULE -->'.PHP_EOL;
+		$html.= PHP_EOL.'</div>'.PHP_EOL.'<!--// SELFDIAGNOSIS MODULE -->'.PHP_EOL;
 		
 		return $html;
 	}
@@ -469,14 +484,14 @@ class ModuleSelfdiagnosis {
 	}
 	
 	/**
-	 * 캘린더 컨텍스트를 가져온다.
+	 * 자가진단 컨텍스트를 가져온다.
 	 *
 	 * @param string $context 컨텍스트 명
 	 * @param object $configs 사이트맵 관리를 통해 설정된 페이지 컨텍스트 설정
 	 * @return string $html 컨텍스트 HTML
 	 */
 	function getDiagnoseContext($context, $configs=null) {
-		$contextTextname = $this->getText("context/{$context}");
+		$contextTextname = $this->getText("view/{$context}");
 
 		$header = PHP_EOL.'<div id="ModuleSelfdiagnosisDiagnoseContext">'.PHP_EOL;
 		$footer = PHP_EOL.'</div>'.PHP_EOL."<script>Selfdiagnosis.init('{$contextTextname}');</script>".PHP_EOL;

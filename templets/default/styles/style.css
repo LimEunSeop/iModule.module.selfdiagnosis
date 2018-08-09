@@ -157,7 +157,7 @@ div[data-module=selfdiagnosis] .resultbox .container h4 {
 div[data-module=selfdiagnosis] .action-button
 {
     position: absolute;
-    right: 0;
+    left: 0;
 	padding: 10px 40px;
     margin: 0px 10px 10px 0px;
 	border-radius: 10px;
@@ -245,9 +245,8 @@ div[data-module=selfdiagnosis] select.tab-dropdown:focus {
  */
  @media (max-width:767px) {
 
-    div[data-module=tab] div[data-role=tabbar] {
+    div[data-module=selfdiagnosis] div[data-role=tabbar] {
         display: none;
-        background-color: red;
     }
     div[data-module=selfdiagnosis] select.tab-dropdown {
         display: inline-block;
