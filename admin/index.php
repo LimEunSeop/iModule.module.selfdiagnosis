@@ -29,7 +29,7 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                         {fieldName:Selfdiagnosis.getText("admin/logs/columns/midx"), value:"midx"},
                         {fieldName:Selfdiagnosis.getText("admin/logs/columns/name"), value:"name"},
                         {fieldName:Selfdiagnosis.getText("admin/logs/columns/subject"), value:"subject"},
-                        {fieldName:Selfdiagnosis.getText("admin/logs/columns/date"), value:"date"}
+                        // {fieldName:Selfdiagnosis.getText("admin/logs/columns/date"), value:"date"}
                     ]
                 },
                 listeners: {
@@ -43,13 +43,13 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                         Ext.getCmp("ModuleSelfdiagnosisSearchTextField").setValue("");
                         Ext.getCmp("ModuleSelfdiagnosisSearchDateField").setValue("");
 
-                        if (newValue.getValue() == "date") {
-                            Ext.getCmp("ModuleSelfdiagnosisSearchTextField").hide();
-                            Ext.getCmp("ModuleSelfdiagnosisSearchDateField").show();
-                        } else {
-                            Ext.getCmp("ModuleSelfdiagnosisSearchDateField").hide();
-                            Ext.getCmp("ModuleSelfdiagnosisSearchTextField").show();
-                        }
+                        // if (newValue.getValue() == "date") {
+                        //     Ext.getCmp("ModuleSelfdiagnosisSearchTextField").hide();
+                        //     Ext.getCmp("ModuleSelfdiagnosisSearchDateField").show();
+                        // } else {
+                        //     Ext.getCmp("ModuleSelfdiagnosisSearchDateField").hide();
+                        //     Ext.getCmp("ModuleSelfdiagnosisSearchTextField").show();
+                        // }
                     }
                 }
             }),
@@ -65,18 +65,18 @@ Ext.onReady(function() { Ext.getCmp("iModuleAdminPanel").add(
                     }
                 }
             }),
-            new Ext.form.DateField({
-                id: "ModuleSelfdiagnosisSearchDateField",
-                name: "searchDateField",
-                enableKeyEvents: true,
-                listeners: {
-                    keydown: function(field, e, eOpts) {
-                        if (e.getCharCode() === e.ENTER) {
-                            Ext.getCmp("ModuleSelfdiagnosisSearchButton").handler();
-                        }
-                    }
-                }
-            }),
+            // new Ext.form.DateField({
+            //     id: "ModuleSelfdiagnosisSearchDateField",
+            //     name: "searchDateField",
+            //     enableKeyEvents: true,
+            //     listeners: {
+            //         keydown: function(field, e, eOpts) {
+            //             if (e.getCharCode() === e.ENTER) {
+            //                 Ext.getCmp("ModuleSelfdiagnosisSearchButton").handler();
+            //             }
+            //         }
+            //     }
+            // }),
             new Ext.Button({
                 id: "ModuleSelfdiagnosisSearchButton",
                 text:Selfdiagnosis.getText("admin/logs/search"),
